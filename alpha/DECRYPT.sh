@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Ensure script exits on any command failure
+set -e
+
+# Read user input securely
+read -s -p "Enter the password: " userInput
+echo
+
+gpg --batch --passphrase "$userInput" --output - --decrypt alpha.tar.xz.gpg | xzcat | tar -xvf -
+echo "Removing encrypted file..."
+rm alpha.tar.xz.gpg
+
+# Clear user input from memory
+unset userInput
