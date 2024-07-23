@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Make executable with chmod +x DECRYPT.sh
+# Run with ./DECRYPT.sh
+
 # Ensure script exits on any command failure
 set -e
 
