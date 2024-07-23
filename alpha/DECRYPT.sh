@@ -12,7 +12,7 @@ echo
 
 gpg --batch --passphrase "$userInput" --output - --decrypt alpha.tar.xz.gpg | xzcat | tar -xvf -
 echo "Removing encrypted file..."
-rm alpha.tar.xz.gpg
+rm -f alpha.tar.xz.gpg
 
 # Clear user input from memory
 unset userInput
